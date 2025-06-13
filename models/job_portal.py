@@ -40,3 +40,7 @@ class JobPortal(models.Model):
         if portal:
             return portal
         return self.create({'source_id': source.id})
+    
+
+    def action_open_search_wizard(self):
+        pass
