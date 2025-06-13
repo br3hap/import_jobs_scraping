@@ -18,6 +18,9 @@
         <field name="model">job.portal</field>
         <field name="arch" type="xml">
             <form string="Job Portal">
+                <header>
+                    <button string="Buscar Ofertas" name="action_open_search_wizard" type="object" class="oe_highlight"/>
+                </header>
                 <sheet>
                     <group name="name" string="string">
                         <field name="source_id"/>

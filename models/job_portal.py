@@ -43,4 +43,13 @@ class JobPortal(models.Model):
     
 
     def action_open_search_wizard(self):
-        pass
+        return {
+            'name': _('Buscar Ofertas en %s') % self.source_id.name,
+            'type': 'ir.actions.act_window',
+            'res_model': 'job.portal.search.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_source_ids':[(6,0,[self.source_id.id])],
+            },
+        }
