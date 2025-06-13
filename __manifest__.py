@@ -7,8 +7,10 @@
     'website': '',
     'category': '',
     'depends': ['base', ],
-    'data': [
-        
+    "data": [
+        "security/ir.model.access.csv",
+        "views/job_portal_source_views.xml",
+        "views/job_portal_views.xml"
     ],
     
     'application': True,
