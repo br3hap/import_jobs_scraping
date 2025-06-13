@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Scraping de Ofertas de trabajo',
-    'version': '',
+    'version': '1.0',
     'summary': """ Módulo que trae ofertas desde portales de trabajos """,
     'author': 'Breithner Aquituari',
     'website': '',

@@ -35,4 +35,7 @@ class JobPortalOffer(models.Model):
         ("portal_remote_uniq", "unique(portal_id, remote_id)", "La oferta ya existe para esta cabecera."),
     ]
 
-    
+
+    def _fetch_offers_from_source(self):
+        pass
+

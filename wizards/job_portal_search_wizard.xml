@@ -7,28 +7,16 @@
         <field name="model">job.portal.search.wizard</field>
         <field name="arch" type="xml">
             <form string="Job Portal Search Wizard">
-                <div class="oe_title">
-                    <label for="name"/>
-                    <h1>
-                        <field name="name" placeholder="Name..."/>
-                    </h1>
-                </div>
+                <group name="name" string="string">
+                    <field name="source_ids" widget="many2many_tags"/>
+                    <field name="keywords"/>
+                </group>
                 <footer>
-                    <button name="add" type="object" string="Add" class="oe_highlight"/>
-                    <button special="cancel" string="Cancel"/>
+                    <button name="action_search" type="object" string="Buscar" class="btn-primary"/>
+                    <button special="cancel" string="Cancelar" class="btn-default"/>
                 </footer>
             </form>
         </field>
-    </record>
-
-    <!-- Action job.portal.search.wizard -->
-    <record id="action_job_portal_search_wizard" model="ir.actions.act_window">
-        <field name="name">Job Portal Search Wizard</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">job.portal.search.wizard</field>
-        <field name="view_mode">form</field>
-        <field name="binding_model_id" ref="addon.model_model_name"/>
-        <field name="target">new</field>
     </record>
 
 </odoo>
