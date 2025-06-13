@@ -29,6 +29,14 @@ class JobPortal(models.Model):
          'Ya existe una cabecera para este portal.'
          )
     ]
-    
 
 
+    def get_or_created(self, source_code):
+        source = self.env['job.portal.source'].search([('code','=',source_code)], limit=1)
+        if not source:
+            raise ValueError(f"No existe fuente de portal con code `{source_code}`.")
+        
+        portal = self.search([('source_id','=',source.id)], limit=1)
+        if portal:
+            return portal
+        return self.create({'source_id': source.id})
