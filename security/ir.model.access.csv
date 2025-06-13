@@ -2,3 +2,4 @@ id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 access_job_portal_manager,job_portal_manager,model_job_portal,,1,1,1,1
 access_job_portal_source_manager,job_portal_source_manager,model_job_portal_source,,1,1,1,1
 access_job_portal_offer_manager,job_portal_offer_manager,model_job_portal_offer,,1,1,1,1
+access_job_portal_search_wizard_manager,job_portal_search_wizard_manager,model_job_portal_search_wizard,,1,1,1,1
