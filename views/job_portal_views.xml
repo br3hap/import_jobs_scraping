@@ -27,6 +27,25 @@
                             <field
                                 name="offer_ids"
                                 mode="list,kanban">
+                                <form>
+                                    <group>
+                                        <group>
+                                            <field name="portal_id" invisible="1"/>
+                                            <field name="remote_id"/>
+                                            <field name="name"/>
+                                            <field name="company"/>
+                                        </group>
+                                    </group>
+                                </form>
+
+                                <list
+                                    string="Ofertas de trabajos"
+                                    editable="bottom"
+                                    limit="200">
+                                        <field name="remote_id"/>
+                                        <field name="name"/>
+                                        <field name="company"/>
+                                </list>
                             </field>                           
                         </page>
                     </notebook>

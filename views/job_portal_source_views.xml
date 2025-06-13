@@ -7,7 +7,10 @@
         <field name="model">job.portal.source</field>
         <field name="arch" type="xml">
             <list>
+                <field name="code"/>
                 <field name="name"/>
+                <field name="list_url"/>
+                <field name="keywords"/>
             </list>
         </field>
     </record>
@@ -19,12 +22,16 @@
         <field name="arch" type="xml">
             <form string="Job Portal Source">
                 <sheet>
-                    <div class="oe_title">
-                        <label for="name"/>
-                        <h1>
-                            <field name="name" placeholder="Name..."/>
-                        </h1>
-                    </div>
+                    <group name="name" string="string">
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="list_url"/>
+                            <field name="keywords"/>
+                        </group>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -37,7 +44,8 @@
         <field name="arch" type="xml">
             <search>
                 <group expand="1" string="Group By">
-                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}"/>
+                    <filter string="Nombre" name="name" domain="[]" context="{'group_by':'name'}"/>
+                    <filter string="Codigo interno" name="code" domain="[]" context="{'group_by':'code'}"/>
                 </group>
             </search>
         </field>

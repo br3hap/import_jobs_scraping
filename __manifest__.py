@@ -9,7 +9,6 @@
     'depends': ['base', ],
     "data": [
         "security/ir.model.access.csv",
-        "views/job_portal_offer_views.xml",
         "views/job_portal_source_views.xml",
         "views/job_portal_views.xml",
         "wizards/job_portal_search_wizard.xml"
