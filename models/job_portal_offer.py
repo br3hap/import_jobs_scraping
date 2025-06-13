@@ -135,17 +135,3 @@ class JobPortalOffer(models.Model):
             self.env['job.portal.offer'].sudo()._create_or_update(portal_rec, remote_id, vals)
 
         return True
-    
-
-    # def cron_fetch_job_offers(self):
-    #     """Cron para refrescar periódicamente todos los portales configurados."""
-    #     Source = self.env['job.portal.source'].sudo()
-    #     for source in Source.search([]):
-    #         portal = self.env['job.portal'].sudo().get_or_created(source.code)
-    #         page = 1
-    #         while True:
-    #             more = self._fetch_offers_from_source(portal, page=page)
-    #             if not more:
-    #                 break
-    #             page += 1
-

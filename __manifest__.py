@@ -21,3 +21,6 @@
     'auto_install': False,
     'license': 'LGPL-3',
 }
+
+# instalar pip install requests beautifulsoup4
+
