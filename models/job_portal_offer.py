@@ -17,3 +17,22 @@ class JobPortalOffer(models.Model):
         required=True,
         ondelete='cascade'
     )
+    remote_id = fields.Char(
+        string='ID en portal',
+        required=True,
+        index=True,
+        copy=False
+    )
+    name = fields.Char(string=_('Título'), required=True)
+    company = fields.Char(string=_('Empresa'))
+    description = fields.Text(string=_('Descripción'))
+    Url = fields.Char(string=_('Url origen'))
+    date_published = fields.Datetime(
+        string=_('Fecha de publicación')
+    )
+
+    _sql_constraints = [
+        ("portal_remote_uniq", "unique(portal_id, remote_id)", "La oferta ya existe para esta cabecera."),
+    ]
+
+    
