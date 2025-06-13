@@ -24,26 +24,30 @@ class JobPortalSearchWizard(models.TransientModel):
         )
     
 
+
     def action_search(self):
         Offer = self.env['job.portal.offer'].sudo()
         Portal = self.env['job.portal'].sudo()
+        portal_ids = []
+        # Iterar sobre cada portal seleccionado
         for source in self.source_ids:
-            portal_rec = Portal.get_or_created(source.code)
+            portal = Portal.get_or_created(source.code)
+            portal_ids.append(portal.id)
             page = 1
+            # Raspar todas las páginas
             while True:
                 more = Offer._fetch_offers_from_source(
-                    portal_rec,
-                    page=page,
-                    keywords=self.keywords
+                    portal, page=page, keywords=self.keywords
                 )
                 if not more:
                     break
                 page += 1
 
+        # Abrir vista con todas las ofertas de los portales elegidos
         return {
-            'name': 'Ofertas encontradas',
-            'view_mode': 'tree, form',
+            'name': 'Ofertas Encontradas',
+            'view_mode': 'tree,form',
             'res_model': 'job.portal.offer',
             'type': 'ir.actions.act_window',
-            'domain':[('portal_id.source_id', 'in', self.source_ids.ids)],
+            'domain': [('portal_id', 'in', portal_ids)],
         }

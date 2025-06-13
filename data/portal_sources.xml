@@ -1,0 +1,14 @@
+<odoo>
+  <record id="job_portal_source_computrabajo" model="job.portal.source">
+    <field name="code">computrabajo</field>
+    <field name="name">Computrabajo Perú – Odoo</field>
+    <field name="list_url">https://pe.computrabajo.com/trabajo-de-odoo</field>
+    <field name="keywords">odoo,erp,python</field>
+  </record>
+  <record id="job_portal_source_linkedin" model="job.portal.source">
+    <field name="code">linkedin</field>
+    <field name="name">LinkedIn – Odoo Perú</field>
+    <field name="list_url">https://www.linkedin.com/jobs/search?keywords=Odoo&amp;location=Peru</field>
+    <field name="keywords">odoo,erp,python</field>
+  </record>
+</odoo>

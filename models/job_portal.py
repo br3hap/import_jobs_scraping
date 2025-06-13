@@ -34,12 +34,9 @@ class JobPortal(models.Model):
     def get_or_created(self, source_code):
         source = self.env['job.portal.source'].search([('code','=',source_code)], limit=1)
         if not source:
-            raise ValueError(f"No existe fuente de portal con code `{source_code}`.")
-        
-        portal = self.search([('source_id','=',source.id)], limit=1)
-        if portal:
-            return portal
-        return self.create({'source_id': source.id})
+            raise ValueError(f"No existe portal con code `{source_code}`.")
+        rec = self.search([('source_id','=', source.id)], limit=1)
+        return rec or self.create({'source_id': source.id})
     
 
     def action_open_search_wizard(self):
@@ -50,6 +47,6 @@ class JobPortal(models.Model):
             'view_mode': 'form',
             'target': 'new',
             'context': {
-                'default_source_ids':[(6,0,[self.source_id.id])],
+                'default_source_ids':[(6, 0, [self.source_id.id])],
             },
         }
