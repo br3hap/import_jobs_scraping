@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="jobs_scraping_menu_root"
+              name="Búsqueda de Trabajos"
+              web_icon="import_jobs_scraping,static/description/icon.png"
+              sequence="10"
+    />
+
+</odoo>

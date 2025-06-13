@@ -66,4 +66,10 @@
         </field>
     </record>
 
+    <menuitem id="portal_source_list_menu"
+            name="Portales de trabajo" 
+            action="action_job_portal_source"
+            sequence="20"
+            parent="jobs_scraping_menu_root"/>
+
 </odoo>

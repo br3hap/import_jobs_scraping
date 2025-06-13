@@ -82,4 +82,10 @@
         </field>
     </record>
 
+    <menuitem id="job_portal_list_menu"
+        name="Trabajos" 
+        action="action_job_portal"
+        sequence="10"
+        parent="jobs_scraping_menu_root"/>
+
 </odoo>
